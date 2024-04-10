@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect } from 'react';
-import DonutChart from '../../componetnts/DonutChart';
 import '../../assets/css/evaluatecss.css';
 
 const Question = () => {
@@ -12,6 +11,7 @@ const Question = () => {
   const [showSubmitButton, setShowSubmitButton] = useState(false); // Track if both files are uploaded
   const [answerScript, setAnswerScript] = useState(null);
   const [expectedAnswer, setExpectedAnswer] = useState(null);
+  const [showResult, setshowResult] = useState(false);
 
 
   const handleAnswerScriptUpload = () => {
@@ -34,8 +34,15 @@ const Question = () => {
 
     console.log(`Uploaded ${type} file:`, file);
   };
-
+  
   const handleSubmit = async (event) => {
+    setshowResult(true);
+    event.preventDefault();
+    const showResultElement = document.getElementById('showresult');
+    if (showResultElement) {
+      showResultElement.scrollIntoView({ behavior: 'smooth' });
+    }
+
     const queryParams = new URLSearchParams();
     queryParams.append('question', question);
     queryParams.append('mark', marks);
@@ -59,6 +66,7 @@ const Question = () => {
       // Handle error response
       console.error('Error:', response.statusText);
     }
+    handleshowResult();
   };
 
   useEffect(() => {
@@ -147,31 +155,23 @@ const Question = () => {
             <label className='text-secondary-lightenglishblue -mt-9'>{expectedAnswerFileName}</label>
           </div>
         </div>
+       
         <div className='absolute top-96 mt-28'>
           {showSubmitButton && <button
             className='buttons'
             onClick={(event) => handleSubmit(event)}>Submit</button>}
         </div>
-      
-        <div class="cards mb-10 translate-y-52">
-          <div class="tools flex flex-row">
-            <div class="circle">
-              <span class="red box"></span>
+        {showResult && <div id='showresult' class="inputcon rounded-md mt-20 mb-4">
+          <div class="search-container rounded-md gap-x-20 p-10">
+            <div>
+              <h4 className='text-6xl font-metro'>50%</h4>
             </div>
-            <div class="circle">
-              <span class="yellow box"></span>
+            <div>
+              <h4 className='text-2xl max-w-56 text-center'>There were grametical errors in Answer Script</h4>
             </div>
-            <div class="circle">
-              <span class="green box"></span>
-            </div>
-          </div>
-          <div class="-mt-16 p-5">
-          <DonutChart />
           </div>
         </div>
-      </div>
-      <div className='flex justify-center items-center'>
-
+        }
       </div>
     </section>
   );

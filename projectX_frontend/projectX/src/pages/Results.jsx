@@ -64,15 +64,15 @@ const Results = () => {
       </div>
       </div>
       
-      <div className="flex flex-row">
+      <div className="flex flex-row -mt-4">
           <TableResult 
           />
         </div>
-      {/* <div className='absolute top-20'>
+      <div className='absolute -bottom-28 mb-0'>
           {showSubmitButton && <button
           className='buttons'
-          onClick={(event) => handleSubmit(event)}>Submit</button>}
-        </div> */}
+          onClick={(event) => handleSubmit(event)}>Download csv</button>}
+        </div>
     </div>
   </section>
   )

@@ -96,9 +96,17 @@ const TableScript = ({ noquestion, marks, setMarks, questionIds, setQuestionIds,
   const table = useMantineReactTable({
     columns,
     data: tableData,
+    
   });
 
-  return <MantineReactTable table={table} />;
+  return <MantineReactTable table={table} 
+  mantineTableHeadCellProps={{
+    align: 'center'
+  }} mantineTableBodyCellProps={{
+    align: 'center'
+  }}
+  renderEmptyRowsFallback={ <Text>OMG THERE ARE NO ROWS 😳</Text>} 
+  />;
 };
 
 export default TableScript;
