@@ -80,9 +80,15 @@ const TableExam = ({ noquestion, examId, subjectId, studentId, onUpload }) => {
   const table = useMantineReactTable({
     columns,
     data: tableData,
+    
   });
 
-  return <MantineReactTable table={table} />;
+  return <MantineReactTable table={table} 
+  mantineTableHeadCellProps={{
+    align: 'center'
+  }} mantineTableBodyCellProps={{
+    align: 'center'
+  }}/>;
 };
 
 export default TableExam;
