@@ -22,11 +22,7 @@ const TableExam = ({ noquestion, examId, subjectId, studentId, onUpload }) => {
     const file = files[index];
     if (file) {
       const formData = new FormData();
-      formData.append('exam_id', examId);
-      formData.append('subject_id', subjectId);
-      formData.append('student_id', studentId);
-      formData.append('question_id', index + 1); // Assuming question IDs start from 1
-      formData.append('file', file);
+      formData.append('ES', file);
 
       console.log("Sending data: ", {
         "Exam ID": examId,
@@ -35,6 +31,26 @@ const TableExam = ({ noquestion, examId, subjectId, studentId, onUpload }) => {
         "Question": index + 1,
         "File": file
       });
+      try {
+        const queryParams = new URLSearchParams();
+        queryParams.append('exam_id', examId);
+        queryParams.append('subject_id', subjectId);
+        queryParams.append('student_id', studentId);
+        queryParams.append('q_id', index + 1);
+
+        const url = "http://127.0.0.1:8000/evaluate/asupload?" + queryParams.toString();
+
+        let response = fetch(url, {
+          method: "POST",
+          body: formData
+        })
+
+        if(response.ok) {
+          console.log("Successfully uploaded question!");
+        }
+      } catch (e) {
+        console.log(e);
+      }
     }
   };
 

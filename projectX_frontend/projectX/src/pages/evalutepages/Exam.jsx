@@ -104,8 +104,22 @@ const Exam = () => {
     }
   };
 
-  const handleSubmit = (event) => {
-    // Your submit logic here
+  const handleSubmit = async(event) => {
+    try {
+      const queryParams = new URLSearchParams();
+
+      queryParams.append('exam_id', exam);
+      queryParams.append('subject_id', subject);
+      const url = "http://127.0.0.1:8000/evaluate/geminiEvaluate?" + queryParams.toString();
+
+      let response = await fetch(url, {
+        method: "POST",
+      })
+
+      console.log(response)
+    } catch(e) {
+      console.log(e);
+    }
   };
 
   useEffect(() => {
