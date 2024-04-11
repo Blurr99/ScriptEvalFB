@@ -109,7 +109,7 @@ const Exam = () => {
       const queryParams = new URLSearchParams();
 
       queryParams.append('exam_id', exam);
-      queryParams.append('subject_id', subject);
+      queryParams.append('subject_id', subjects[subject]);
       const url = "http://127.0.0.1:8000/evaluate/geminiEvaluate?" + queryParams.toString();
 
       let response = await fetch(url, {
