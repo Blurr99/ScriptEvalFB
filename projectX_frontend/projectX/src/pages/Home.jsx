@@ -154,7 +154,7 @@ const Home = () => {
                 <span class="green box"></span>
               </div>
             </div>
-            <h2 className="vertical-timeline-element-title text-white">Question</h2> <br />
+            <h2 className="vertical-timeline-element-title text-white">One Question</h2> <br />
             <h4 className="vertical-timeline-element-subtitle">1.	One Question Evaluate:</h4>
             <p className='pl-5'>
               ⚙︎ Upload the necessary files (The question, Max Marks, Expected answer in a pdf, and the answer to be evaluated as a pdf)
@@ -191,7 +191,7 @@ const Home = () => {
                 <span class="green box"></span>
               </div>
             </div>
-            <h2 className="vertical-timeline-element-title">Script</h2><br />
+            <h2 className="vertical-timeline-element-title">Many Question</h2><br />
             <h4 className="vertical-timeline-element-subtitle">1.	Many Question Evaluate:</h4>
             <p className='pl-5'>
               ⚙︎	This method is used to do a lot of Evaluations in a single go.
@@ -223,7 +223,7 @@ const Home = () => {
                 <span class="green box"></span>
               </div>
             </div>
-            <h2 className="text-white">Exam</h2><br />
+            <h2 className="text-white">Many Question</h2><br />
             <h4 className="vertical-timeline-element-subtitle">3.	Upload Answer Script:</h4>
             <p className='pl-5'>
               ⚙︎	You must have uploaded the Evaluation Scheme before you are eligible to upload the Answer Script..
@@ -260,7 +260,7 @@ const Home = () => {
               </div>
             </div>
             <h2 className="vertical-timeline-element-title">Result</h2><br />
-            <h4 className="vertical-timeline-element-subtitle">1.	Upload Answer Script:</h4>
+            <h4 className="vertical-timeline-element-subtitle">1.	Select options:</h4>
             <p className='pl-5'>
               ⚙︎	Subject: Clicking this field displays a dropdown menu with a list of available subjects.
             </p>
