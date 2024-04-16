@@ -1,11 +1,11 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import EvalutionNavbar from '../componetnts/EvalutionNavbar'
+
 
 const Evaluate = () => {
   return (
     <div>
-      
-      <Outlet />
+      <EvalutionNavbar />
     </div>
   )
 }

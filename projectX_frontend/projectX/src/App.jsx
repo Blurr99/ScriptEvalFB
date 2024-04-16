@@ -3,11 +3,12 @@ import Navbar from "./componetnts/Navbar";
 import Home from "./pages/Home";
 import Evaluate from "./pages/Evaluate";
 import Results from "./pages/Results";
-import EvalutionNavbar from "./componetnts/EvalutionNavbar";
 import Exam from "./pages/evalutepages/Exam";
 import Question from "./pages/evalutepages/Question";
 import Script from "./pages/evalutepages/Script";
-import DevTeam from "./componetnts/DevTeam";
+import MultipleQ from "./pages/evalutepages/MultipleQ";
+import MultipleNav from "./componetnts/MultipleNav";
+import SideAnimation from "./componetnts/SideAnimation";
 
 
 const App = () => {
@@ -18,19 +19,18 @@ const App = () => {
         <Routes>   
           <Route path="/" element={<Home />} />
 
-          <Route path="/evaluate" element={
-                                          <>
-                                          <Evaluate />
-                                          <EvalutionNavbar />
-
-                                          </>
-                                          }>
-                                            <Route path="script" element={<Script />} />
-                                            <Route path="question" element={<Question />} />
-                                            <Route path="exam" element={<Exam />} />
+          <Route path="/evaluate" element={<Evaluate />} />
+                                   
+          <Route path="/multipleq" element={<>
+            <MultipleQ />
+            <MultipleNav />
+            </>} >
+                  <Route path="script" element={<Script />} />
+                  <Route path="exam" element={<Exam />} />
           </Route>
+          <Route path="/question" element={<Question />} />
           <Route path="/results" element={<Results />} /> 
-          <Route path="/devteam" element={<DevTeam />} />
+          <Route path="/side" element={<SideAnimation />} /> 
         </Routes>
       </Router>
       

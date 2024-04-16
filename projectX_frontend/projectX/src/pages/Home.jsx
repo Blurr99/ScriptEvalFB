@@ -97,7 +97,7 @@ const Home = () => {
       <div className='relative top-72 font-mono uppercase text-8xl text-center'>
         <div className="text"></div>
       </div>
-      <div className='relative top-96 translate-y-80'>
+      <div className='relative placment'>
         <VerticalTimeline lineColor='black'
 
         >

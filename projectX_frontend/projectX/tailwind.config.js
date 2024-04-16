@@ -7,9 +7,17 @@ export default {
   theme: {
     extend: {
       animation: {
+        "marquee": 'marquee 25s linear infinite',
         'spin-slow': 'spin 3s linear infinite',
-      }
-,
+        'ping-slow': 'ping 2s cubic-bezier(0, 0, 0.9, 0.1) 5',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateY(0%)' },
+          '100%': { transform: 'translateY(-100%)' },
+        }
+      },
+    
       colors: {
         
         secondary: {
@@ -38,7 +46,13 @@ export default {
         empyrean: "Empyrean" ,
         saveur:'Saveur',
         saveurround:'Saveurround',
-        metro:'Metro'
+        metro:'Metro',
+        bluesprits:'BlueSprits',
+        bluesprit2:'BlueSpiritsAl',
+        bright:'Bright',
+        upstroke:'Ustroke',
+        starifedemo:'StarifeDemo',
+        norwesters:'Norwesters',
         // Add more custom font families as needed
       },
   },
