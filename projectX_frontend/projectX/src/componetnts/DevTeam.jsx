@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const DevTeam = () => {
   return (
     <div className='flex justify-center items-center'>

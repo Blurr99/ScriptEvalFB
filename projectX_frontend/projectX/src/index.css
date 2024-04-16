@@ -16,6 +16,10 @@ h2{
   font-family: Empyrean;
   src: url("./fonts/Empyrean.otf") format("opentype");
 }
+@font-face {
+  font-family: Norwesters;
+  src: url("./fonts/norwester.otf") format("opentype");
+}
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
@@ -27,6 +31,26 @@ input[type=number] {
 @font-face {
   font-family: Saveur;
   src: url("./fonts/saveur.otf") format("opentype");
+}
+@font-face {
+  font-family: BlueSprits;
+  src: url("./fonts/Blue\ Spirits.otf") format("opentype");
+}
+@font-face {
+  font-family: BlueSpiritsAl;
+  src: url("./fonts/Blue\ Spirits\ Alt.otf") format("opentype");
+}
+@font-face {
+  font-family: Bright;
+  src: url("./fonts/bright.otf") format("opentype");
+}
+@font-face {
+  font-family: Ustroke;
+  src: url("./fonts/Ustroke-Regular.ttf") format("opentype");
+}
+@font-face {
+  font-family: StarifeDemo;
+  src: url("./fonts/StarifeDemo.ttf") format("opentype");
 }
 @font-face {
   font-family: Metro;
@@ -85,6 +109,11 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .Evaluateheader {
+    @apply flex flex-row justify-center items-center text-base py-4 gap-x-20 max-h-screen px-4 absolute rounded-xl z-10 right-0 left-0;
+    top:30vh;
+    margin-left: -15.9vw;
+  }
+  .MultipleHeader {
     @apply flex flex-col justify-start items-start text-base py-4 gap-y-20 max-h-screen px-4 max-w-sm absolute top-20 rounded-xl mx-5 z-10 right-0 left-0;
   }
 
@@ -322,6 +351,25 @@ body:has(.card[data-color="green"]:hover) {
   transform: translate(3px, 3px);
 }
 
+
+.NavButtons {
+  font-family: monospace;
+  font-size: 1.5rem;
+  color: black;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid #000000;
+  background: #FFFFFF;
+  box-shadow: 3px 3px #000000;
+  cursor: pointer;
+}
+
+.NavButtons:active {
+  box-shadow: none;
+  transform: translate(3px, 3px);
+}
+
 .circle {
   padding: 0 4px;
  }
@@ -351,4 +399,52 @@ body:has(.card[data-color="green"]:hover) {
 button svg {
   width: 1.9rem;
   height: 1.9rem;
+}
+.placment
+{
+  top:101vh;
+}
+
+.cardss {
+  --bg: #e8e8e8;
+  --contrast: #ffffff;
+  position: relative;
+  padding: 9px;
+  background-color: var(--bg);
+  border-radius: 35px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.card-overlays {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-conic-gradient(var(--bg) 0.0000001%, var(--grey) 0.000104%) 60% 60%/600% 600%;
+  filter: opacity(10%) contrast(105%);
+}
+
+.card-inners {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 190px;
+  height: 254px;
+  background-color: var(--contrast);
+  border-radius: 30px;
+  /* Content style */
+  font-size: 30px;
+  font-weight: 900;
+  color: #c7c4c4;
+  text-align: center;
+  font-family: monospace;
+}
+
+.card-inners nav:hover
+{
+
+  color: #000;
+  transition: color 0.5s ease-in-out;
 }
