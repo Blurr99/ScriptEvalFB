@@ -12,6 +12,7 @@ const Question = () => {
   const [answerScript, setAnswerScript] = useState(null);
   const [expectedAnswer, setExpectedAnswer] = useState(null);
   const [showResult, setshowResult] = useState(false);
+  const [evaluation, setEvaluation] = useState(null);
 
 
   const handleAnswerScriptUpload = () => {
@@ -61,12 +62,13 @@ const Question = () => {
     if (response.ok) {
       // Read the response body as JSON
       const responseData = await response.json();
-      console.log(JSON.parse(responseData));
+      const responseString = JSON.parse(responseData[0]);
+      const result = JSON.parse(responseString);
+      setEvaluation(result);
     } else {
       // Handle error response
       console.error('Error:', response.statusText);
     }
-    handleshowResult();
   };
 
   useEffect(() => {
@@ -161,13 +163,13 @@ const Question = () => {
             className='buttons'
             onClick={(event) => handleSubmit(event)}>Submit</button>}
         </div>
-        {showResult && <div id='showresult' class="inputcon rounded-md mt-20 mb-4">
+        {evaluation && <div id='showresult' class="inputcon rounded-md mt-20 mb-4">
           <div class="search-container rounded-md gap-x-20 p-10">
             <div>
-              <h4 className='text-6xl font-metro'>50%</h4>
+              <h4 className='text-6xl font-metro'>{evaluation.marks}</h4>
             </div>
             <div>
-              <h4 className='text-2xl max-w-56 text-center'>There were grametical errors in Answer Script</h4>
+              <h4 className='text-2xl max-w-56 text-center'>{evaluation.reasons}</h4>
             </div>
           </div>
         </div>
